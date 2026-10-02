@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +10,12 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&family=Alex+Brush&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&family=Alex+Brush&display=swap"
+        rel="stylesheet">
     <!-- FontAwesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <script>
         tailwind.config = {
             theme: {
@@ -66,53 +69,67 @@
             background-position: center;
             background-attachment: fixed;
         }
+
         .card-shadow {
             box-shadow: 0 10px 30px -5px rgba(27, 65, 83, 0.08);
         }
     </style>
 </head>
+
 <body class="bg-offwhite text-stone-800 font-sans antialiased selection:bg-petroleum-100 selection:text-petroleum-900">
 
-    <nav class="fixed w-full z-40 bg-white/90 backdrop-blur-md border-b border-petroleum-100 transition-all duration-300 shadow-sm" id="navbar">
+    <nav class="fixed w-full z-40 bg-white/90 backdrop-blur-md border-b border-petroleum-100 transition-all duration-300 shadow-sm"
+        id="navbar">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <a href="#home" class="font-serif text-2xl md:text-3xl font-semibold text-petroleum-900 tracking-wide" id="nav-brand">
+                <a href="#home" class="font-serif text-2xl md:text-3xl font-semibold text-petroleum-900 tracking-wide"
+                    id="nav-brand">
                     José e Julia
                 </a>
-                
+
                 <div class="hidden md:flex space-x-7 text-xs tracking-widest uppercase font-medium text-stone-600">
                     <a href="#historia" class="hover:text-petroleum-600 transition-colors py-2">Nossa História</a>
                     <a href="#detalhes" class="hover:text-petroleum-600 transition-colors py-2">Local & Dress Code</a>
                     <a href="#presentes" class="hover:text-petroleum-600 transition-colors py-2">Lista de Presentes</a>
                     <a href="#mural" class="hover:text-petroleum-600 transition-colors py-2">Recados</a>
-                    <a href="#rsvp" class="bg-petroleum-800 text-white px-5 py-2 rounded-full hover:bg-petroleum-900 transition-colors shadow-sm">Confirmar Presença</a>
+                    <a href="#rsvp"
+                        class="bg-petroleum-800 text-white px-5 py-2 rounded-full hover:bg-petroleum-900 transition-colors shadow-sm">Confirmar
+                        Presença</a>
                 </div>
 
-                <button id="mobile-menu-btn" class="md:hidden text-stone-700 focus:outline-none p-2" aria-label="Abrir Menu">
+                <button id="mobile-menu-btn" class="md:hidden text-stone-700 focus:outline-none p-2"
+                    aria-label="Abrir Menu">
                     <i class="fa-solid fa-bars text-xl"></i>
                 </button>
             </div>
         </div>
 
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-petroleum-100 px-6 pt-2 pb-6 space-y-3 text-center text-xs tracking-widest uppercase font-medium">
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white border-b border-petroleum-100 px-6 pt-2 pb-6 space-y-3 text-center text-xs tracking-widest uppercase font-medium">
             <a href="#historia" class="block py-2 text-stone-600 hover:text-petroleum-600">Nossa História</a>
             <a href="#detalhes" class="block py-2 text-stone-600 hover:text-petroleum-600">Local & Dress Code</a>
             <a href="#presentes" class="block py-2 text-stone-600 hover:text-petroleum-600">Lista de Presentes</a>
             <a href="#mural" class="block py-2 text-stone-600 hover:text-petroleum-600">Recados</a>
-            <a href="#rsvp" class="block bg-petroleum-800 text-white py-3 rounded-full hover:bg-petroleum-900 mt-4">Confirmar Presença</a>
+            <a href="#rsvp"
+                class="block bg-petroleum-800 text-white py-3 rounded-full hover:bg-petroleum-900 mt-4">Confirmar
+                Presença</a>
         </div>
     </nav>
 
-    <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-center text-white relative px-4 pt-20">
+    <section id="home"
+        class="hero-bg min-h-screen flex items-center justify-center text-center text-white relative px-4 pt-20">
         <div class="max-w-3xl z-10 space-y-6">
-            <span class="font-script text-4xl sm:text-5xl md:text-6xl text-gold-300 block mb-2">Com grande alegria convidamos vocês</span>
+            <span class="font-script text-4xl sm:text-5xl md:text-6xl text-gold-300 block mb-2">Com grande alegria
+                convidamos vocês</span>
             <h1 class="font-serif text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight mb-2" id="hero-title">
                 José e Julia
             </h1>
-            <p class="text-sm sm:text-base font-light tracking-[0.25em] uppercase text-stone-200 mb-6" id="hero-subtitle">
+            <p class="text-sm sm:text-base font-light tracking-[0.25em] uppercase text-stone-200 mb-6"
+                id="hero-subtitle">
                 Nosso Grande Dia
             </p>
-            <p class="text-base sm:text-xl font-light tracking-widest uppercase border-y border-white/30 py-3 max-w-xl mx-auto" id="hero-date">
+            <p class="text-base sm:text-xl font-light tracking-widest uppercase border-y border-white/30 py-3 max-w-xl mx-auto"
+                id="hero-date">
                 11 DE SETEMBRO DE 2027
             </p>
 
@@ -128,27 +145,32 @@
                         <span class="text-[10px] sm:text-xs uppercase tracking-wider text-stone-300">Horas</span>
                     </div>
                     <div class="bg-petroleum-900/60 backdrop-blur-md rounded-2xl p-3 border border-white/20">
-                        <span id="minutes" class="block text-2xl sm:text-4xl font-serif font-bold text-gold-300">00</span>
+                        <span id="minutes"
+                            class="block text-2xl sm:text-4xl font-serif font-bold text-gold-300">00</span>
                         <span class="text-[10px] sm:text-xs uppercase tracking-wider text-stone-300">Min</span>
                     </div>
                     <div class="bg-petroleum-900/60 backdrop-blur-md rounded-2xl p-3 border border-white/20">
-                        <span id="seconds" class="block text-2xl sm:text-4xl font-serif font-bold text-gold-300">00</span>
+                        <span id="seconds"
+                            class="block text-2xl sm:text-4xl font-serif font-bold text-gold-300">00</span>
                         <span class="text-[10px] sm:text-xs uppercase tracking-wider text-stone-300">Seg</span>
                     </div>
                 </div>
             </div>
 
             <div class="pt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#rsvp" class="w-full sm:w-auto bg-petroleum-600 text-white font-medium px-8 py-3.5 rounded-full shadow-lg hover:bg-petroleum-500 transition-all text-sm tracking-wide border border-petroleum-400">
+                <a href="#rsvp"
+                    class="w-full sm:w-auto bg-petroleum-600 text-white font-medium px-8 py-3.5 rounded-full shadow-lg hover:bg-petroleum-500 transition-all text-sm tracking-wide border border-petroleum-400">
                     Confirmar Presença <i class="fa-solid fa-heart ml-2 text-gold-300"></i>
                 </a>
-                <a href="#presentes" class="w-full sm:w-auto bg-white/20 backdrop-blur-md border border-white/40 text-white font-medium px-8 py-3.5 rounded-full hover:bg-white hover:text-petroleum-900 transition-all text-sm tracking-wide">
+                <a href="#presentes"
+                    class="w-full sm:w-auto bg-white/20 backdrop-blur-md border border-white/40 text-white font-medium px-8 py-3.5 rounded-full hover:bg-white hover:text-petroleum-900 transition-all text-sm tracking-wide">
                     Lista de Presentes <i class="fa-solid fa-gift ml-2"></i>
                 </a>
             </div>
         </div>
 
-        <a href="#boas-vindas" class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-white/80 hover:text-white">
+        <a href="#boas-vindas"
+            class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-white/80 hover:text-white">
             <i class="fa-solid fa-chevron-down text-2xl"></i>
         </a>
     </section>
@@ -159,7 +181,9 @@
         <div class="w-16 h-0.5 bg-gold-400 mx-auto mt-4 mb-8"></div>
         <div class="bg-white p-8 sm:p-12 rounded-3xl card-shadow border border-petroleum-100">
             <p class="text-stone-700 text-base sm:text-xl leading-relaxed font-serif italic mb-6">
-                "Olá! Somos o José e a Julia e a gente se ama hehehe tchau brigado! Brincadeiras à parte, preparamos esse cantinho especial com todo o carinho do mundo para compartilhar cada detalhe do nosso grande dia com vocês."
+                "Olá! Somos o José e a Julia e a gente se ama hehehe tchau brigado! Brincadeiras à parte, preparamos
+                esse cantinho especial com todo o carinho do mundo para compartilhar cada detalhe do nosso grande dia
+                com vocês."
             </p>
             <p class="text-stone-500 text-xs sm:text-sm uppercase tracking-widest font-semibold">
                 — José e Julia
@@ -167,7 +191,8 @@
         </div>
     </section>
 
-    <section id="historia" class="py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto bg-petroleum-50/50 rounded-3xl my-8 border border-petroleum-100">
+    <section id="historia"
+        class="py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto bg-petroleum-50/50 rounded-3xl my-8 border border-petroleum-100">
         <div class="text-center max-w-2xl mx-auto mb-16">
             <span class="text-petroleum-600 font-script text-3xl sm:text-4xl">Linha do tempo</span>
             <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-petroleum-900 mt-1">Nossa História</h2>
@@ -175,28 +200,35 @@
         </div>
 
         <!-- Linha do Tempo Desktop -->
-        <div class="space-y-16 relative before:absolute before:inset-0 before:left-1/2 before:-ml-px before:w-0.5 before:bg-petroleum-200 hidden md:block">
+        <div
+            class="space-y-16 relative before:absolute before:inset-0 before:left-1/2 before:-ml-px before:w-0.5 before:bg-petroleum-200 hidden md:block">
             <div class="relative flex items-center justify-between group">
                 <div class="w-5/12 pr-8 text-right">
                     <span class="text-petroleum-600 font-serif font-bold text-xl">12 / 10 / 2021</span>
                     <h3 class="font-serif text-2xl font-semibold text-petroleum-900 mt-1">Quando Nos Conhecemos</h3>
                     <p class="text-stone-600 text-sm mt-2 leading-relaxed">
-                        O dia em que os nossos caminhos se cruzaram pela primeira vez. Um momento simples que deu início a tudo.
+                        O dia em que os nossos caminhos se cruzaram pela primeira vez. Um momento simples que deu início
+                        a tudo.
                     </p>
                 </div>
-                <div class="absolute left-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-white border-2 border-petroleum-600 flex items-center justify-center z-10 text-petroleum-600 text-sm shadow-sm">
+                <div
+                    class="absolute left-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-white border-2 border-petroleum-600 flex items-center justify-center z-10 text-petroleum-600 text-sm shadow-sm">
                     <i class="fa-solid fa-sparkles text-gold-500"></i>
                 </div>
                 <div class="w-5/12 pl-8">
-                    <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=600&auto=format&fit=crop" alt="Nos conhecemos" class="rounded-2xl shadow-md border-4 border-white h-44 w-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=600&auto=format&fit=crop"
+                        alt="Nos conhecemos"
+                        class="rounded-2xl shadow-md border-4 border-white h-44 w-full object-cover">
                 </div>
             </div>
 
             <div class="relative flex items-center justify-between group">
                 <div class="w-5/12 pr-8">
-                    <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=600&auto=format&fit=crop" alt="O Namoro" class="rounded-2xl shadow-md border-4 border-white h-44 w-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=600&auto=format&fit=crop"
+                        alt="O Namoro" class="rounded-2xl shadow-md border-4 border-white h-44 w-full object-cover">
                 </div>
-                <div class="absolute left-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-white border-2 border-petroleum-600 flex items-center justify-center z-10 text-petroleum-600 text-sm shadow-sm">
+                <div
+                    class="absolute left-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-white border-2 border-petroleum-600 flex items-center justify-center z-10 text-petroleum-600 text-sm shadow-sm">
                     <i class="fa-solid fa-heart text-gold-500"></i>
                 </div>
                 <div class="w-5/12 pl-8 text-left">
@@ -213,22 +245,27 @@
                     <span class="text-petroleum-600 font-serif font-bold text-xl">12 / 03 / 2026</span>
                     <h3 class="font-serif text-2xl font-semibold text-petroleum-900 mt-1">O Pedido de Casamento</h3>
                     <p class="text-stone-600 text-sm mt-2 leading-relaxed">
-                        Ao completar exatamente 4 anos juntos, veio a pergunta inesquecível e a resposta mais feliz do mundo: SIM!
+                        Ao completar exatamente 4 anos juntos, veio a pergunta inesquecível e a resposta mais feliz do
+                        mundo: SIM!
                     </p>
                 </div>
-                <div class="absolute left-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-white border-2 border-petroleum-600 flex items-center justify-center z-10 text-petroleum-600 text-sm shadow-sm">
+                <div
+                    class="absolute left-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-white border-2 border-petroleum-600 flex items-center justify-center z-10 text-petroleum-600 text-sm shadow-sm">
                     <i class="fa-solid fa-ring text-gold-500"></i>
                 </div>
                 <div class="w-5/12 pl-8">
-                    <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=600&auto=format&fit=crop" alt="O Pedido" class="rounded-2xl shadow-md border-4 border-white h-44 w-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=600&auto=format&fit=crop"
+                        alt="O Pedido" class="rounded-2xl shadow-md border-4 border-white h-44 w-full object-cover">
                 </div>
             </div>
 
             <div class="relative flex items-center justify-between group">
                 <div class="w-5/12 pr-8">
-                    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=600&auto=format&fit=crop" alt="O Casamento" class="rounded-2xl shadow-md border-4 border-white h-44 w-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=600&auto=format&fit=crop"
+                        alt="O Casamento" class="rounded-2xl shadow-md border-4 border-white h-44 w-full object-cover">
                 </div>
-                <div class="absolute left-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-petroleum-800 text-white flex items-center justify-center z-10 text-sm shadow-md">
+                <div
+                    class="absolute left-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-petroleum-800 text-white flex items-center justify-center z-10 text-sm shadow-md">
                     <i class="fa-solid fa-church text-gold-300"></i>
                 </div>
                 <div class="w-5/12 pl-8 text-left">
@@ -276,10 +313,12 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             <div class="bg-white p-8 rounded-3xl card-shadow border border-petroleum-100 flex flex-col justify-between">
                 <div>
-                    <div class="w-12 h-12 bg-petroleum-100 text-petroleum-800 rounded-2xl flex items-center justify-center text-xl mb-6">
+                    <div
+                        class="w-12 h-12 bg-petroleum-100 text-petroleum-800 rounded-2xl flex items-center justify-center text-xl mb-6">
                         <i class="fa-solid fa-location-dot"></i>
                     </div>
-                    <h3 class="font-serif text-2xl font-semibold text-petroleum-900 mb-2">Local da Cerimônia e Festa</h3>
+                    <h3 class="font-serif text-2xl font-semibold text-petroleum-900 mb-2">Local da Cerimônia e Festa
+                    </h3>
                     <p class="text-petroleum-600 font-semibold mb-4 text-sm tracking-wide" id="party-time">
                         <i class="fa-regular fa-clock mr-2"></i> 11 de Setembro de 2027
                     </p>
@@ -288,14 +327,17 @@
                         Um ambiente aconchegante e encantador pra celebrarmos essa festa inesquecível juntos.
                     </p>
                 </div>
-                <a id="btn-map-party" href="https://www.google.com/maps/search/?api=1&query=Villarejo+Eventos" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full py-3.5 px-4 bg-petroleum-800 text-white rounded-xl hover:bg-petroleum-900 transition-colors text-xs uppercase tracking-widest font-medium shadow-sm">
+                <a id="btn-map-party" href="https://www.google.com/maps/search/?api=1&query=Villarejo+Eventos"
+                    target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center w-full py-3.5 px-4 bg-petroleum-800 text-white rounded-xl hover:bg-petroleum-900 transition-colors text-xs uppercase tracking-widest font-medium shadow-sm">
                     <i class="fa-solid fa-map-location-dot mr-2"></i> Ver no Google Maps
                 </a>
             </div>
 
             <div class="bg-white p-8 rounded-3xl card-shadow border border-petroleum-100 flex flex-col justify-between">
                 <div>
-                    <div class="w-12 h-12 bg-petroleum-100 text-petroleum-800 rounded-2xl flex items-center justify-center text-xl mb-6">
+                    <div
+                        class="w-12 h-12 bg-petroleum-100 text-petroleum-800 rounded-2xl flex items-center justify-center text-xl mb-6">
                         <i class="fa-solid fa-user-tie"></i>
                     </div>
                     <h3 class="font-serif text-2xl font-semibold text-petroleum-900 mb-2">Dress Code</h3>
@@ -303,8 +345,10 @@
                         <i class="fa-solid fa-palette mr-2"></i> Paleta: Azul Petróleo
                     </p>
                     <p class="text-stone-600 mb-6 leading-relaxed text-sm">
-                        Para os nossos <strong>padrinhos e madrinhas</strong>, escolhemos com carinho o tom <strong>Azul Petróleo</strong> para compor o altar.<br><br>
-                        Aos demais convidados amados, o traje sugerido é <strong>Esporte Fino / Passeio Completo</strong>. Venham elegantes e confortáveis para curtir muito a festa!
+                        Para os nossos <strong>padrinhos e madrinhas</strong>, escolhemos com carinho o tom <strong>Azul
+                            Petróleo</strong> para compor o altar.<br><br>
+                        Aos demais convidados amados, o traje sugerido é <strong>Esporte Fino / Passeio
+                            Completo</strong>. Venham elegantes e confortáveis para curtir muito a festa!
                     </p>
                 </div>
                 <div class="flex items-center space-x-2 pt-2 border-t border-stone-100">
@@ -323,104 +367,135 @@
         <div class="max-w-6xl mx-auto">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <span class="text-petroleum-600 font-script text-3xl sm:text-4xl">Mimos para os Noivos</span>
-                <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-petroleum-900 mt-1">Lista de Presentes Virtuais</h2>
-                <p class="text-stone-600 mt-2 text-sm">Sua presença é o melhor presente! Se desejar nos presentear com uma cota especial para a nossa nova jornada, escolha um item fofo abaixo:</p>
+                <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-petroleum-900 mt-1">Lista de Presentes
+                    Virtuais</h2>
+                <p class="text-stone-600 mt-2 text-sm">Sua presença é o melhor presente! Se desejar nos presentear com
+                    uma cota especial para a nossa nova jornada, escolha um item fofo abaixo:</p>
                 <div class="w-16 h-0.5 bg-gold-400 mx-auto mt-4"></div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-3xl overflow-hidden card-shadow border border-petroleum-100 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1">
-                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=600&auto=format&fit=crop" alt="Jantar Romântico" class="h-48 w-full object-cover">
+                <div
+                    class="bg-white rounded-3xl overflow-hidden card-shadow border border-petroleum-100 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=600&auto=format&fit=crop"
+                        alt="Jantar Romântico" class="h-48 w-full object-cover">
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="font-serif text-xl font-semibold text-petroleum-900 mb-1">Jantar Romântico na Lua de Mel</h3>
-                            <p class="text-stone-500 text-xs mb-4">Para o José e a Julia brindarem a nova vida a dois.</p>
+                            <h3 class="font-serif text-xl font-semibold text-petroleum-900 mb-1">Jantar Romântico na Lua
+                                de Mel</h3>
+                            <p class="text-stone-500 text-xs mb-4">Para o José e a Julia brindarem a nova vida a dois.
+                            </p>
                         </div>
                         <div class="flex items-center justify-between border-t border-stone-100 pt-4">
                             <span class="font-serif text-xl font-bold text-petroleum-800">R$ 150,00</span>
-                            <button onclick="openGiftModal('Jantar Romântico na Lua de Mel', '150,00')" class="bg-petroleum-800 text-white px-4 py-2 rounded-xl text-xs uppercase tracking-wider hover:bg-petroleum-900 transition-colors">
+                            <button onclick="openGiftModal('Jantar Romântico na Lua de Mel', '150,00')"
+                                class="bg-petroleum-800 text-white px-4 py-2 rounded-xl text-xs uppercase tracking-wider hover:bg-petroleum-900 transition-colors">
                                 Presentear
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-3xl overflow-hidden card-shadow border border-petroleum-100 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1">
-                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=600&auto=format&fit=crop" alt="Passagens" class="h-48 w-full object-cover">
+                <div
+                    class="bg-white rounded-3xl overflow-hidden card-shadow border border-petroleum-100 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=600&auto=format&fit=crop"
+                        alt="Passagens" class="h-48 w-full object-cover">
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="font-serif text-xl font-semibold text-petroleum-900 mb-1">Cota de Passagens Aéreas</h3>
-                            <p class="text-stone-500 text-xs mb-4">Ajude a levar os recém-casados para a viagem dos sonhos.</p>
+                            <h3 class="font-serif text-xl font-semibold text-petroleum-900 mb-1">Cota de Passagens
+                                Aéreas</h3>
+                            <p class="text-stone-500 text-xs mb-4">Ajude a levar os recém-casados para a viagem dos
+                                sonhos.</p>
                         </div>
                         <div class="flex items-center justify-between border-t border-stone-100 pt-4">
                             <span class="font-serif text-xl font-bold text-petroleum-800">R$ 300,00</span>
-                            <button onclick="openGiftModal('Cota de Passagens Aéreas', '300,00')" class="bg-petroleum-800 text-white px-4 py-2 rounded-xl text-xs uppercase tracking-wider hover:bg-petroleum-900 transition-colors">
+                            <button onclick="openGiftModal('Cota de Passagens Aéreas', '300,00')"
+                                class="bg-petroleum-800 text-white px-4 py-2 rounded-xl text-xs uppercase tracking-wider hover:bg-petroleum-900 transition-colors">
                                 Presentear
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-3xl overflow-hidden card-shadow border border-petroleum-100 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1">
-                    <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=600&auto=format&fit=crop" alt="Café da Manhã" class="h-48 w-full object-cover">
+                <div
+                    class="bg-white rounded-3xl overflow-hidden card-shadow border border-petroleum-100 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1">
+                    <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=600&auto=format&fit=crop"
+                        alt="Café da Manhã" class="h-48 w-full object-cover">
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="font-serif text-xl font-semibold text-petroleum-900 mb-1">Café da Manhã Especial na Cama</h3>
-                            <p class="text-stone-500 text-xs mb-4">Um dia de preguiça e dengo reforçado para os noivos.</p>
+                            <h3 class="font-serif text-xl font-semibold text-petroleum-900 mb-1">Café da Manhã Especial
+                                na Cama</h3>
+                            <p class="text-stone-500 text-xs mb-4">Um dia de preguiça e dengo reforçado para os noivos.
+                            </p>
                         </div>
                         <div class="flex items-center justify-between border-t border-stone-100 pt-4">
                             <span class="font-serif text-xl font-bold text-petroleum-800">R$ 100,00</span>
-                            <button onclick="openGiftModal('Café da Manhã Especial na Cama', '100,00')" class="bg-petroleum-800 text-white px-4 py-2 rounded-xl text-xs uppercase tracking-wider hover:bg-petroleum-900 transition-colors">
+                            <button onclick="openGiftModal('Café da Manhã Especial na Cama', '100,00')"
+                                class="bg-petroleum-800 text-white px-4 py-2 rounded-xl text-xs uppercase tracking-wider hover:bg-petroleum-900 transition-colors">
                                 Presentear
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-3xl overflow-hidden card-shadow border border-petroleum-100 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1">
-                    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=600&auto=format&fit=crop" alt="Passeio" class="h-48 w-full object-cover">
+                <div
+                    class="bg-white rounded-3xl overflow-hidden card-shadow border border-petroleum-100 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1">
+                    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=600&auto=format&fit=crop"
+                        alt="Passeio" class="h-48 w-full object-cover">
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="font-serif text-xl font-semibold text-petroleum-900 mb-1">Passeio Inesquecível de Barco</h3>
-                            <p class="text-stone-500 text-xs mb-4">Para guardar momentos incríveis no álbum do casamento.</p>
+                            <h3 class="font-serif text-xl font-semibold text-petroleum-900 mb-1">Passeio Inesquecível de
+                                Barco</h3>
+                            <p class="text-stone-500 text-xs mb-4">Para guardar momentos incríveis no álbum do
+                                casamento.</p>
                         </div>
                         <div class="flex items-center justify-between border-t border-stone-100 pt-4">
                             <span class="font-serif text-xl font-bold text-petroleum-800">R$ 200,00</span>
-                            <button onclick="openGiftModal('Passeio Inesquecível de Barco', '200,00')" class="bg-petroleum-800 text-white px-4 py-2 rounded-xl text-xs uppercase tracking-wider hover:bg-petroleum-900 transition-colors">
+                            <button onclick="openGiftModal('Passeio Inesquecível de Barco', '200,00')"
+                                class="bg-petroleum-800 text-white px-4 py-2 rounded-xl text-xs uppercase tracking-wider hover:bg-petroleum-900 transition-colors">
                                 Presentear
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-3xl overflow-hidden card-shadow border border-petroleum-100 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1">
-                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=600&auto=format&fit=crop" alt="Enxoval" class="h-48 w-full object-cover">
+                <div
+                    class="bg-white rounded-3xl overflow-hidden card-shadow border border-petroleum-100 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1">
+                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=600&auto=format&fit=crop"
+                        alt="Enxoval" class="h-48 w-full object-cover">
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="font-serif text-xl font-semibold text-petroleum-900 mb-1">Kit Casa Nova dos Noivos</h3>
-                            <p class="text-stone-500 text-xs mb-4">Para deixar o ninho de José e Julia ainda mais aconchegante.</p>
+                            <h3 class="font-serif text-xl font-semibold text-petroleum-900 mb-1">Kit Casa Nova dos
+                                Noivos</h3>
+                            <p class="text-stone-500 text-xs mb-4">Para deixar o ninho de José e Julia ainda mais
+                                aconchegante.</p>
                         </div>
                         <div class="flex items-center justify-between border-t border-stone-100 pt-4">
                             <span class="font-serif text-xl font-bold text-petroleum-800">R$ 250,00</span>
-                            <button onclick="openGiftModal('Kit Casa Nova dos Noivos', '250,00')" class="bg-petroleum-800 text-white px-4 py-2 rounded-xl text-xs uppercase tracking-wider hover:bg-petroleum-900 transition-colors">
+                            <button onclick="openGiftModal('Kit Casa Nova dos Noivos', '250,00')"
+                                class="bg-petroleum-800 text-white px-4 py-2 rounded-xl text-xs uppercase tracking-wider hover:bg-petroleum-900 transition-colors">
                                 Presentear
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-3xl overflow-hidden card-shadow border border-petroleum-100 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1">
-                    <div class="h-48 bg-gradient-to-br from-petroleum-800 to-petroleum-900 flex items-center justify-center text-gold-300 text-5xl">
+                <div
+                    class="bg-white rounded-3xl overflow-hidden card-shadow border border-petroleum-100 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1">
+                    <div
+                        class="h-48 bg-gradient-to-br from-petroleum-800 to-petroleum-900 flex items-center justify-center text-gold-300 text-5xl">
                         <i class="fa-solid fa-heart"></i>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="font-serif text-xl font-semibold text-petroleum-900 mb-1">Contribuição de Valor Livre</h3>
+                            <h3 class="font-serif text-xl font-semibold text-petroleum-900 mb-1">Contribuição de Valor
+                                Livre</h3>
                             <p class="text-stone-500 text-xs mb-4">Escolha a quantia que mandar o seu coração!</p>
                         </div>
                         <div class="flex items-center justify-between border-t border-stone-100 pt-4">
                             <span class="font-serif text-xl font-bold text-petroleum-800">Você escolhe</span>
-                            <button onclick="openGiftModal('Contribuição de Valor Livre', 'Qualquer valor')" class="bg-petroleum-800 text-white px-4 py-2 rounded-xl text-xs uppercase tracking-wider hover:bg-petroleum-900 transition-colors">
+                            <button onclick="openGiftModal('Contribuição de Valor Livre', 'Qualquer valor')"
+                                class="bg-petroleum-800 text-white px-4 py-2 rounded-xl text-xs uppercase tracking-wider hover:bg-petroleum-900 transition-colors">
                                 Presentear
                             </button>
                         </div>
@@ -435,30 +510,38 @@
         <div class="bg-white p-8 sm:p-12 rounded-3xl card-shadow border border-petroleum-100">
             <div class="text-center max-w-xl mx-auto mb-10">
                 <span class="text-petroleum-600 font-script text-3xl sm:text-4xl">Sua Presença</span>
-                <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-petroleum-900 mt-1">Confirmação de Presença</h2>
-                
-                <div class="mt-4 inline-block bg-amber-50 border border-amber-200 text-amber-900 text-xs font-semibold px-4 py-2 rounded-full shadow-sm">
+                <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-petroleum-900 mt-1">Confirmação de
+                    Presença</h2>
+
+                <div
+                    class="mt-4 inline-block bg-amber-50 border border-amber-200 text-amber-900 text-xs font-semibold px-4 py-2 rounded-full shadow-sm">
                     <i class="fa-solid fa-calendar-check mr-1.5 text-amber-600"></i>
                     Por favor, confirme sua presença até 11 de Março de 2027
                 </div>
-                
+
                 <div class="w-16 h-0.5 bg-gold-400 mx-auto mt-4"></div>
             </div>
 
             <form id="rsvp-form" onsubmit="handleRSVP(event)" class="space-y-6">
                 <div>
-                    <label class="block text-xs font-semibold uppercase tracking-wider text-stone-700 mb-2">Seu Nome Completo *</label>
-                    <input type="text" id="rsvp-fullname" required placeholder="Digite seu nome completo" class="w-full px-4 py-3.5 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-petroleum-600 bg-stone-50/50">
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-stone-700 mb-2">Seu Nome
+                        Completo *</label>
+                    <input type="text" id="rsvp-fullname" required placeholder="Digite seu nome completo"
+                        class="w-full px-4 py-3.5 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-petroleum-600 bg-stone-50/50">
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
-                        <label class="block text-xs font-semibold uppercase tracking-wider text-stone-700 mb-2">Telefone / WhatsApp *</label>
-                        <input type="tel" id="rsvp-phone" required placeholder="(00) 00000-0000" class="w-full px-4 py-3.5 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-petroleum-600 bg-stone-50/50">
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-stone-700 mb-2">Telefone
+                            / WhatsApp *</label>
+                        <input type="tel" id="rsvp-phone" required placeholder="(00) 00000-0000"
+                            class="w-full px-4 py-3.5 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-petroleum-600 bg-stone-50/50">
                     </div>
                     <div>
-                        <label class="block text-xs font-semibold uppercase tracking-wider text-stone-700 mb-2">Irá ao Casamento? *</label>
-                        <select id="rsvp-status" required class="w-full px-4 py-3.5 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-petroleum-600 bg-white">
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-stone-700 mb-2">Irá ao
+                            Casamento? *</label>
+                        <select id="rsvp-status" required
+                            class="w-full px-4 py-3.5 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-petroleum-600 bg-white">
                             <option value="Sim">Sim, com certeza estarei lá!</option>
                             <option value="Não">Infelizmente não poderei comparecer</option>
                         </select>
@@ -466,11 +549,15 @@
                 </div>
 
                 <div>
-                    <label class="block text-xs font-semibold uppercase tracking-wider text-stone-700 mb-2">Acompanhantes / Observações (opcional)</label>
-                    <textarea id="rsvp-obs" rows="2" placeholder="Nome dos acompanhantes ou observações..." class="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-petroleum-600 bg-stone-50/50"></textarea>
+                    <label
+                        class="block text-xs font-semibold uppercase tracking-wider text-stone-700 mb-2">Acompanhantes /
+                        Observações (opcional)</label>
+                    <textarea id="rsvp-obs" rows="2" placeholder="Nome dos acompanhantes ou observações..."
+                        class="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-petroleum-600 bg-stone-50/50"></textarea>
                 </div>
 
-                <button type="submit" class="w-full bg-petroleum-800 text-white font-medium py-4 rounded-xl hover:bg-petroleum-900 transition-colors text-xs uppercase tracking-widest shadow-md flex items-center justify-center space-x-2">
+                <button type="submit"
+                    class="w-full bg-petroleum-800 text-white font-medium py-4 rounded-xl hover:bg-petroleum-900 transition-colors text-xs uppercase tracking-widest shadow-md flex items-center justify-center space-x-2">
                     <span>Enviar e Avisar aos Noivos</span>
                     <i class="fa-brands fa-whatsapp text-lg text-emerald-400"></i>
                 </button>
@@ -487,16 +574,23 @@
                 <div class="w-16 h-0.5 bg-gold-400 mx-auto mt-4"></div>
             </div>
 
-            <form id="guestbook-form" onsubmit="addMessage(event)" class="bg-white p-6 sm:p-8 rounded-3xl card-shadow border border-petroleum-100 mb-12 space-y-4">
+            <form id="guestbook-form" onsubmit="addMessage(event)"
+                class="bg-white p-6 sm:p-8 rounded-3xl card-shadow border border-petroleum-100 mb-12 space-y-4">
                 <div>
-                    <label class="block text-xs font-semibold uppercase tracking-wider text-stone-700 mb-1">Seu Nome</label>
-                    <input type="text" id="msg-name" required placeholder="Ex: Lucas & Mariana" class="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-petroleum-600">
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-stone-700 mb-1">Seu
+                        Nome</label>
+                    <input type="text" id="msg-name" required placeholder="Ex: Lucas & Mariana"
+                        class="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-petroleum-600">
                 </div>
                 <div>
-                    <label class="block text-xs font-semibold uppercase tracking-wider text-stone-700 mb-1">Sua Mensagem</label>
-                    <textarea id="msg-text" required rows="3" placeholder="Escreva seus votos de felicidades e amor ao casal..." class="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-petroleum-600"></textarea>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-stone-700 mb-1">Sua
+                        Mensagem</label>
+                    <textarea id="msg-text" required rows="3"
+                        placeholder="Escreva seus votos de felicidades e amor ao casal..."
+                        class="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-petroleum-600"></textarea>
                 </div>
-                <button type="submit" class="w-full bg-petroleum-800 text-white font-medium py-3.5 rounded-xl hover:bg-petroleum-900 transition-colors text-xs uppercase tracking-widest shadow-sm">
+                <button type="submit"
+                    class="w-full bg-petroleum-800 text-white font-medium py-3.5 rounded-xl hover:bg-petroleum-900 transition-colors text-xs uppercase tracking-widest shadow-sm">
                     Publicar Recado <i class="fa-solid fa-paper-plane ml-2 text-gold-300"></i>
                 </button>
             </form>
@@ -507,7 +601,9 @@
                         <h4 class="font-semibold text-petroleum-900">Família Silva</h4>
                         <span class="text-xs text-stone-400">Recente</span>
                     </div>
-                    <p class="text-stone-600 text-sm leading-relaxed">"José e Julia! Que alegria ver vocês dando esse passo tão lindo na vida. Que a caminhada seja repleta de paz, risadas e companheirismo. Amamos vocês!"</p>
+                    <p class="text-stone-600 text-sm leading-relaxed">"José e Julia! Que alegria ver vocês dando esse
+                        passo tão lindo na vida. Que a caminhada seja repleta de paz, risadas e companheirismo. Amamos
+                        vocês!"</p>
                 </div>
             </div>
         </div>
@@ -515,7 +611,8 @@
 
     <footer class="bg-petroleum-900 text-white py-12 px-4 text-center">
         <div class="max-w-4xl mx-auto space-y-4">
-            <h3 class="font-serif text-3xl font-semibold tracking-wide text-gold-300" id="footer-names">José e Julia</h3>
+            <h3 class="font-serif text-3xl font-semibold tracking-wide text-gold-300" id="footer-names">José e Julia
+            </h3>
             <p class="text-petroleum-200 text-xs tracking-wider uppercase">Villarejo Eventos &bull; 11.09.2027</p>
             <div class="text-petroleum-400 text-xs pt-6 border-t border-petroleum-800">
                 Feito com carinho para celebrar a união de José e Julia.
@@ -523,56 +620,70 @@
         </div>
     </footer>
 
-    <div id="gift-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div id="gift-modal"
+        class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
         <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 relative card-shadow space-y-6">
             <button onclick="closeGiftModal()" class="absolute top-4 right-4 text-stone-400 hover:text-stone-600 p-2">
                 <i class="fa-solid fa-xmark text-xl"></i>
             </button>
 
             <div class="text-center">
-                <div class="w-12 h-12 bg-petroleum-100 text-petroleum-800 rounded-2xl flex items-center justify-center text-xl mx-auto mb-3">
+                <div
+                    class="w-12 h-12 bg-petroleum-100 text-petroleum-800 rounded-2xl flex items-center justify-center text-xl mx-auto mb-3">
                     <i class="fa-solid fa-qrcode"></i>
                 </div>
-                <h3 class="font-serif text-2xl font-semibold text-petroleum-900" id="modal-gift-title">Presentear o Casal</h3>
+                <h3 class="font-serif text-2xl font-semibold text-petroleum-900" id="modal-gift-title">Presentear o
+                    Casal</h3>
                 <p class="text-petroleum-700 font-bold text-lg mt-1" id="modal-gift-price">R$ 0,00</p>
             </div>
 
             <div class="bg-stone-50 p-4 rounded-2xl border border-petroleum-100 text-center space-y-3">
-                <span class="text-[10px] text-stone-500 font-semibold uppercase tracking-wider block">Dados Bancários / PIX</span>
-                
+                <span class="text-[10px] text-stone-500 font-semibold uppercase tracking-wider block">Dados Bancários /
+                    PIX</span>
+
                 <div class="text-xs text-stone-700 space-y-1">
                     <p><strong>Titular:</strong> <span id="pix-holder-display">José Fernando Tolentino Filho</span></p>
-                    <p><strong>Chave PIX:</strong> <span id="pix-key-display" class="font-mono font-semibold text-petroleum-800">62985042608</span></p>
+                    <p><strong>Chave PIX:</strong> <span id="pix-key-display"
+                            class="font-mono font-semibold text-petroleum-800">62985042608</span></p>
                 </div>
 
                 <div class="pt-2">
-                    <button onclick="copyPixKey()" class="w-full bg-petroleum-800 hover:bg-petroleum-900 text-white font-medium py-2.5 rounded-xl text-xs uppercase tracking-wider transition-colors flex items-center justify-center space-x-2">
+                    <button onclick="copyPixKey()"
+                        class="w-full bg-petroleum-800 hover:bg-petroleum-900 text-white font-medium py-2.5 rounded-xl text-xs uppercase tracking-wider transition-colors flex items-center justify-center space-x-2">
                         <i class="fa-regular fa-copy"></i>
                         <span>Copiar Chave PIX</span>
                     </button>
                 </div>
-                <p id="copy-success-msg" class="text-xs text-emerald-600 font-medium hidden">✓ Chave PIX copiada com sucesso!</p>
+                <p id="copy-success-msg" class="text-xs text-emerald-600 font-medium hidden">✓ Chave PIX copiada com
+                    sucesso!</p>
             </div>
 
             <form onsubmit="confirmGift(event)" class="space-y-4">
                 <div>
-                    <label class="block text-[11px] font-semibold uppercase tracking-wider text-stone-600 mb-1">Seu Nome</label>
-                    <input type="text" id="gift-giver-name" required placeholder="Como deseja se identificar?" class="w-full px-4 py-2.5 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-petroleum-600">
+                    <label class="block text-[11px] font-semibold uppercase tracking-wider text-stone-600 mb-1">Seu
+                        Nome</label>
+                    <input type="text" id="gift-giver-name" required placeholder="Como deseja se identificar?"
+                        class="w-full px-4 py-2.5 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-petroleum-600">
                 </div>
-                <button type="submit" class="w-full bg-petroleum-800 text-white font-medium py-3 rounded-xl hover:bg-petroleum-900 transition-colors text-xs uppercase tracking-widest shadow-sm">
+                <button type="submit"
+                    class="w-full bg-petroleum-800 text-white font-medium py-3 rounded-xl hover:bg-petroleum-900 transition-colors text-xs uppercase tracking-widest shadow-sm">
                     Avisar aos Noivos no WhatsApp <i class="fa-brands fa-whatsapp ml-1 text-emerald-400"></i>
                 </button>
             </form>
         </div>
     </div>
 
-    <button onclick="openConfigModal()" class="fixed bottom-4 right-4 bg-petroleum-900/90 text-white p-3 rounded-full shadow-2xl hover:bg-petroleum-800 transition-transform duration-300 hover:scale-105 z-30 flex items-center space-x-2 text-xs px-4 backdrop-blur-md border border-petroleum-700" title="Painel dos Noivos">
+    <button onclick="openConfigModal()"
+        class="fixed bottom-4 right-4 bg-petroleum-900/90 text-white p-3 rounded-full shadow-2xl hover:bg-petroleum-800 transition-transform duration-300 hover:scale-105 z-30 flex items-center space-x-2 text-xs px-4 backdrop-blur-md border border-petroleum-700"
+        title="Painel dos Noivos">
         <i class="fa-solid fa-gear text-sm text-gold-300"></i>
         <span>Painel do Casal</span>
     </button>
 
-    <div id="config-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
-        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 relative card-shadow space-y-6 max-h-[90vh] overflow-y-auto">
+    <div id="config-modal"
+        class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div
+            class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 relative card-shadow space-y-6 max-h-[90vh] overflow-y-auto">
             <button onclick="closeConfigModal()" class="absolute top-4 right-4 text-stone-400 hover:text-stone-600 p-2">
                 <i class="fa-solid fa-xmark text-xl"></i>
             </button>
@@ -584,31 +695,41 @@
 
             <form onsubmit="saveSiteConfig(event)" class="space-y-4 text-xs">
                 <div>
-                    <label class="block font-semibold uppercase tracking-wider text-stone-700 mb-1">Nomes do Casal</label>
-                    <input type="text" id="cfg-names" value="José e Julia" class="w-full px-4 py-2.5 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-petroleum-600">
+                    <label class="block font-semibold uppercase tracking-wider text-stone-700 mb-1">Nomes do
+                        Casal</label>
+                    <input type="text" id="cfg-names" value="José e Julia"
+                        class="w-full px-4 py-2.5 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-petroleum-600">
                 </div>
 
                 <div>
-                    <label class="block font-semibold uppercase tracking-wider text-stone-700 mb-1">Data e Hora do Casamento</label>
-                    <input type="datetime-local" id="cfg-date" value="2027-09-11T16:30" class="w-full px-4 py-2.5 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-petroleum-600">
+                    <label class="block font-semibold uppercase tracking-wider text-stone-700 mb-1">Data e Hora do
+                        Casamento</label>
+                    <input type="datetime-local" id="cfg-date" value="2027-09-11T16:30"
+                        class="w-full px-4 py-2.5 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-petroleum-600">
                 </div>
 
                 <div>
                     <label class="block font-semibold uppercase tracking-wider text-stone-700 mb-1">Chave PIX</label>
-                    <input type="text" id="cfg-pix" value="62985042608" class="w-full px-4 py-2.5 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-petroleum-600">
+                    <input type="text" id="cfg-pix" value="62985042608"
+                        class="w-full px-4 py-2.5 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-petroleum-600">
                 </div>
 
                 <div>
-                    <label class="block font-semibold uppercase tracking-wider text-stone-700 mb-1">Titular do PIX</label>
-                    <input type="text" id="cfg-holder" value="José Fernando Tolentino Filho" class="w-full px-4 py-2.5 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-petroleum-600">
+                    <label class="block font-semibold uppercase tracking-wider text-stone-700 mb-1">Titular do
+                        PIX</label>
+                    <input type="text" id="cfg-holder" value="José Fernando Tolentino Filho"
+                        class="w-full px-4 py-2.5 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-petroleum-600">
                 </div>
 
                 <div>
-                    <label class="block font-semibold uppercase tracking-wider text-stone-700 mb-1">Local do Evento</label>
-                    <input type="text" id="cfg-party" value="Villarejo Eventos" class="w-full px-4 py-2.5 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-petroleum-600">
+                    <label class="block font-semibold uppercase tracking-wider text-stone-700 mb-1">Local do
+                        Evento</label>
+                    <input type="text" id="cfg-party" value="Villarejo Eventos"
+                        class="w-full px-4 py-2.5 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-petroleum-600">
                 </div>
 
-                <button type="submit" class="w-full bg-petroleum-900 text-white font-medium py-3.5 rounded-xl hover:bg-petroleum-800 transition-colors uppercase tracking-widest shadow-sm">
+                <button type="submit"
+                    class="w-full bg-petroleum-900 text-white font-medium py-3.5 rounded-xl hover:bg-petroleum-800 transition-colors uppercase tracking-widest shadow-sm">
                     Salvar Alteraçoes no Site
                 </button>
             </form>
@@ -662,51 +783,58 @@
         // RSVP Handler - DUPLO (Google Sheets + Envio para Ambos os Números do WhatsApp)
         async function handleRSVP(e) {
             e.preventDefault();
+
+            // Captura os dados digitados pelo convidado
             const name = document.getElementById('rsvp-fullname').value;
             const phone = document.getElementById('rsvp-phone').value;
             const status = document.getElementById('rsvp-status').value;
             const obs = document.getElementById('rsvp-obs').value;
 
-            // 1. Enviar para a Planilha do Google Forms
+            // Teu número do WhatsApp (Noivo)
+            const phoneJose = "5562985042608";
+
+            // 1. Envio para a Planilha do Google Forms (em segundo plano)
             const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSfrYaeqXQwzGKXSmker51wtEqO0Af8n8mHtRuz8y3mOP-cfLw/formResponse";
-            const formData = new FormData();
-            formData.append('entry.884477138', name);
-            formData.append('entry.690689138', phone);
-            formData.append('entry.477927916', status);
-            formData.append('entry.491737940', obs);
+
+            const params = new URLSearchParams();
+            params.append('entry.884477138', name);     // Nome completo
+            params.append('entry.690689138', phone);    // Telefone
+            params.append('entry.477927916', status);   // Presença (Sim / Não)
+            params.append('entry.491737940', obs);      // Acompanhantes / Obs
 
             try {
-                await fetch(formUrl, {
+                fetch(formUrl, {
                     method: 'POST',
                     mode: 'no-cors',
-                    body: formData
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: params.toString()
                 });
             } catch (error) {
-                console.error("Erro ao registrar na planilha:", error);
+                console.error("Erro ao salvar na planilha:", error);
             }
 
-            // 2. Monta mensagem formatada
+            // 2. Monta a mensagem e abre a conversa no teu WhatsApp
             let text = `Olá! Sou *${name}* e confirmei presença no casamento!\n`;
-            text += `• *Presença:* ${status}\n`;
+            text += `• *Presença:* ${status === 'Sim' ? 'Sim, com certeza estarei lá!' : 'Infelizmente não poderei comparecer'}\n`;
             if (phone) text += `• *WhatsApp:* ${phone}\n`;
             if (obs) text += `• *Acompanhantes/Obs:* ${obs}\n`;
 
             const wppUrlJose = `https://wa.me/${phoneJose}?text=${encodeURIComponent(text)}`;
-            const wppUrlJulia = `https://wa.me/${phoneJulia}?text=${encodeURIComponent(text)}`;
 
-            // Dispara abertura das duas abas do WhatsApp
-            window.open(wppUrlJose, '_blank');
-            setTimeout(() => {
-                window.open(wppUrlJulia, '_blank');
-            }, 500);
-
-            // Aviso na tela do site
+            // Mensagem de aviso na tela do site
             const msgBox = document.createElement('div');
             msgBox.className = "fixed bottom-6 left-1/2 -translate-x-1/2 bg-petroleum-900 text-white px-6 py-4 rounded-2xl shadow-2xl z-50 text-xs font-medium border border-gold-400";
-            msgBox.innerText = `Obrigado! Sua confirmação foi salva na planilha e enviada para o WhatsApp, ${name}!`;
+            msgBox.innerText = `Obrigado! Sua presença foi registrada com sucesso, ${name}!`;
             document.body.appendChild(msgBox);
 
             setTimeout(() => msgBox.remove(), 4000);
+
+            // Abre o WhatsApp
+            window.open(wppUrlJose, '_blank');
+
+            // Limpa os campos do formulário
             document.getElementById('rsvp-form').reset();
         }
 
@@ -751,7 +879,7 @@
 
         function copyPixKey() {
             const keyText = document.getElementById('pix-key-display').innerText;
-            
+
             const tempInput = document.createElement("input");
             tempInput.value = keyText;
             document.body.appendChild(tempInput);
@@ -804,7 +932,7 @@
             document.getElementById('hero-title').innerText = names;
             document.getElementById('nav-brand').innerText = names;
             document.getElementById('footer-names').innerText = names;
-            
+
             if (dateStr) {
                 weddingDate = new Date(dateStr).getTime();
                 const d = new Date(dateStr);
@@ -821,4 +949,5 @@
         }
     </script>
 </body>
+
 </html>
