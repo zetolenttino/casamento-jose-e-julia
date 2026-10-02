@@ -63,6 +63,13 @@
         }
     </script>
     <style>
+        /* Oculta o widget do Netlify */
+        [data-netlify-deploy-id],
+        #netlify-modal-root,
+        iframe[src*="netlify"] {
+            display: none !important;
+        }
+
         .hero-bg {
             background-image: linear-gradient(rgba(18, 44, 57, 0.60), rgba(18, 44, 57, 0.70)), url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1920&auto=format&fit=crop');
             background-size: cover;
