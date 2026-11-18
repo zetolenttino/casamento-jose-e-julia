@@ -687,7 +687,7 @@
         </div>
     </div>
 
-    <!-- SCRIPT JS COMPLETO COM BANCO DE DADOS DE CONVIDADOS E RSVP DINÂMICO -->
+    <!-- SCRIPT JS COMPLETO COM CONEXÃO À PLANILHA DO GOOGLE SHEETS -->
     <script>
         // Data e Chaves Globais
         let weddingDate = new Date("2027-09-11T16:30:00").getTime();
@@ -695,6 +695,10 @@
         let pixHolder = "José Fernando Tolentino Filho";
         const phoneJose = "5562985042608";
         const phoneJulia = "5562982850409";
+
+        // URL do Google Apps Script gerada na sua planilha
+        const webAppUrl = "https://script.google.com/macros/s/AKfycbz4otrgjhwZEurkczoauZafOcLsqEvPZTkpOHDp9gr_gLhqRwNEo1lFmOY6RV4J-_x9/exec";
+        let currentFoundGroup = null;
 
         // Navigation
         const mobileBtn = document.getElementById('mobile-menu-btn');
@@ -731,40 +735,8 @@
         setInterval(updateCountdown, 1000);
         updateCountdown();
 
-        // ---------------------------------------------------------
-        // BASE DE DADOS DOS CONVIDADOS DO CASAMENTO (Júlia & José)
-        // ---------------------------------------------------------
-        const weddingGuestsDatabase = [
-            {
-                phoneFull: "62985042608", // Finais 2608
-                familyName: "Família Tolentino",
-                members: [
-                    { name: "José Fernando Tolentino Filho", ageGroup: "Adulto" },
-                    { name: "Julia Moreira Soares", ageGroup: "Adulto" }
-                ]
-            },
-            {
-                phoneFull: "62999887766", // Finais 7766
-                familyName: "Roberto e Família",
-                members: [
-                    { name: "Roberto Silva", ageGroup: "Adulto" },
-                    { name: "Maria Silva", ageGroup: "Adulto" },
-                    { name: "Pedrinho Silva", ageGroup: "Criança" }
-                ]
-            },
-            {
-                phoneFull: "62911223344", // Finais 3344
-                familyName: "Mariana Souza",
-                members: [
-                    { name: "Mariana Souza", ageGroup: "Adulto" }
-                ]
-            }
-        ];
-
-        let currentFoundGroup = null;
-
-        // Função que busca o convite pelos 4 últimos dígitos
-        function searchGuestInvitation() {
+        // Função que busca o convite pelos 4 últimos dígitos direto da Planilha
+        async function searchGuestInvitation() {
             const inputVal = document.getElementById('search-last4').value.trim();
             const errorMsg = document.getElementById('search-error');
 
@@ -774,56 +746,73 @@
                 return;
             }
 
-            // Procura no banco de dados quem termina com esses 4 dígitos
-            const found = weddingGuestsDatabase.find(group => group.phoneFull.slice(-4) === inputVal);
-
-            if (!found) {
-                errorMsg.innerText = "Convite não encontrado com esses 4 dígitos. Verifique o número ou chame os noivos!";
-                errorMsg.classList.remove('hidden');
-                return;
-            }
-
             errorMsg.classList.add('hidden');
-            currentFoundGroup = found;
 
-            // Atualiza o título do grupo
-            document.getElementById('family-group-title').innerText = found.familyName;
+            const btnSearch = event.target;
+            const originalText = btnSearch.innerText;
+            btnSearch.innerText = "Buscando...";
+            btnSearch.disabled = true;
 
-            // Renderiza os membros na tela (igualzinho na imagem de referência)
-            const listContainer = document.getElementById('guests-dynamic-list');
-            listContainer.innerHTML = '';
+            try {
+                const response = await fetch(webAppUrl);
+                const guestsDatabase = await response.json();
 
-            found.members.forEach((member, index) => {
-                const memberCard = `
-                    <div class="bg-stone-50/70 p-5 rounded-2xl border border-stone-200 space-y-3">
-                        <div>
-                            <label class="block text-[11px] font-semibold uppercase tracking-wider text-stone-500 mb-1">Nome Completo</label>
-                            <input type="text" value="${member.name}" disabled
-                                class="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm bg-stone-100 text-stone-700 font-medium">
-                        </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                const found = guestsDatabase.find(group => String(group.phoneFull).slice(-4) === inputVal);
+
+                btnSearch.innerText = originalText;
+                btnSearch.disabled = false;
+
+                if (!found) {
+                    errorMsg.innerText = "Convite não encontrado com esses 4 dígitos. Verifique o número ou fale com os noivos!";
+                    errorMsg.classList.remove('hidden');
+                    return;
+                }
+
+                currentFoundGroup = found;
+
+                document.getElementById('family-group-title').innerText = found.familyName;
+
+                const listContainer = document.getElementById('guests-dynamic-list');
+                listContainer.innerHTML = '';
+
+                found.members.forEach((member, index) => {
+                    const memberCard = `
+                        <div class="bg-stone-50/70 p-5 rounded-2xl border border-stone-200 space-y-3">
                             <div>
-                                <label class="block text-[11px] font-semibold uppercase tracking-wider text-stone-500 mb-1">Grupo de Idade</label>
-                                <input type="text" value="${member.ageGroup}" disabled
-                                    class="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm bg-stone-100 text-stone-700">
+                                <label class="block text-[11px] font-semibold uppercase tracking-wider text-stone-500 mb-1">Nome Completo</label>
+                                <input type="text" value="${member.name}" disabled
+                                    class="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm bg-stone-100 text-stone-700 font-medium">
                             </div>
-                            <div>
-                                <label class="block text-[11px] font-semibold uppercase tracking-wider text-stone-500 mb-1">Status de Confirmação *</label>
-                                <select name="status_${index}" required
-                                    class="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-petroleum-600 bg-white font-medium text-petroleum-900">
-                                    <option value="Irá comparecer">Irá comparecer</option>
-                                    <option value="Não poderá comparecer">Infelizmente não poderá</option>
-                                </select>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-[11px] font-semibold uppercase tracking-wider text-stone-500 mb-1">Grupo de Idade</label>
+                                    <input type="text" value="${member.ageGroup}" disabled
+                                        class="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm bg-stone-100 text-stone-700">
+                                </div>
+                                <div>
+                                    <label class="block text-[11px] font-semibold uppercase tracking-wider text-stone-500 mb-1">Status de Confirmação *</label>
+                                    <select name="status_${index}" required
+                                        class="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-petroleum-600 bg-white font-medium text-petroleum-900">
+                                        <option value="Irá comparecer">Irá comparecer</option>
+                                        <option value="Não poderá comparecer">Infelizmente não poderá</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                `;
-                listContainer.insertAdjacentHTML('beforeend', memberCard);
-            });
+                    `;
+                    listContainer.insertAdjacentHTML('beforeend', memberCard);
+                });
 
-            // Alterna a tela de busca para a tela de confirmação
-            document.getElementById('rsvp-search-container').classList.add('hidden');
-            document.getElementById('rsvp-result-container').classList.remove('hidden');
+                document.getElementById('rsvp-search-container').classList.add('hidden');
+                document.getElementById('rsvp-result-container').classList.remove('hidden');
+
+            } catch (error) {
+                console.error("Erro ao buscar convidados:", error);
+                btnSearch.innerText = originalText;
+                btnSearch.disabled = false;
+                errorMsg.innerText = "Erro ao conectar com a planilha. Tente novamente em instantes!";
+                errorMsg.classList.remove('hidden');
+            }
         }
 
         // Botão de voltar para a busca
@@ -852,13 +841,13 @@
             const obs = document.getElementById('rsvp-obs').value;
             if (obs) summaryText += `• *Observações:* ${obs}\n`;
 
-            // 1. Envio em segundo plano para a Planilha do Google Forms
+            // Envio em segundo plano para o Google Forms vinculado à planilha
             const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSfrYaeqXQwzGKXSmker51wtEqO0Af8n8mHtRuz8y3mOP-cfLw/formResponse";
             const params = new URLSearchParams();
-            params.append('entry.884477138', currentFoundGroup.familyName); // Família/Titular
-            params.append('entry.690689138', currentFoundGroup.phoneFull);   // Telefone
-            params.append('entry.477927916', statusesForSheet.join(' | ')); // Status dos membros
-            params.append('entry.491737940', obs);                          // Obs
+            params.append('entry.884477138', currentFoundGroup.familyName);
+            params.append('entry.690689138', currentFoundGroup.phoneFull);
+            params.append('entry.477927916', statusesForSheet.join(' | '));
+            params.append('entry.491737940', obs);
 
             try {
                 fetch(formUrl, {
@@ -871,10 +860,8 @@
                 console.error("Erro ao salvar na planilha:", error);
             }
 
-            // 2. Dispara a mensagem no WhatsApp para você (José)
             const wppUrlJose = `https://wa.me/${phoneJose}?text=${encodeURIComponent(summaryText)}`;
 
-            // Mensagem de sucesso na tela
             const msgBox = document.createElement('div');
             msgBox.className = "fixed bottom-6 left-1/2 -translate-x-1/2 bg-petroleum-900 text-white px-6 py-4 rounded-2xl shadow-2xl z-50 text-xs font-medium border border-gold-400";
             msgBox.innerText = `Presença confirmada com sucesso para ${currentFoundGroup.familyName}!`;
