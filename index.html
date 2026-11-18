@@ -536,7 +536,7 @@
                     <div class="flex max-w-xs mx-auto gap-2">
                         <input type="text" id="search-last4" maxlength="4" placeholder="Ex: 2608"
                             class="w-full text-center tracking-widest font-mono text-lg px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:border-petroleum-600 bg-white">
-                        <button type="button" onclick="searchGuestInvitation()"
+                        <button type="button" onclick="searchGuestInvitation(event)"
                             class="bg-petroleum-800 text-white px-6 py-3 rounded-xl hover:bg-petroleum-900 transition-colors text-xs uppercase tracking-wider font-medium shadow-sm">
                             Buscar
                         </button>
@@ -736,7 +736,7 @@
         updateCountdown();
 
         // Função que busca o convite pelos 4 últimos dígitos direto da Planilha com anti-cache
-        async function searchGuestInvitation() {
+        async function searchGuestInvitation(evt) {
             const inputVal = document.getElementById('search-last4').value.trim();
             const errorMsg = document.getElementById('search-error');
 
@@ -748,10 +748,20 @@
 
             errorMsg.classList.add('hidden');
 
-            const btnSearch = event.target;
+            const activeEvent = evt || window.event;
+            const btnSearch = activeEvent && activeEvent.target
+                ? activeEvent.target.closest('button')
+                : document.querySelector('#rsvp-search-container button');
             const originalText = btnSearch.innerText;
             btnSearch.innerText = "Buscando...";
             btnSearch.disabled = true;
+
+            const ageOptions = [
+                "Adulto",
+                "Criança (0 a 4 anos)",
+                "Criança (5 a 7 anos)",
+                "Criança (8+ anos)"
+            ];
 
             try {
                 // Adiciona carimbo de tempo para evitar cache do navegador/netlify
@@ -777,24 +787,39 @@
                 listContainer.innerHTML = '';
 
                 found.members.forEach((member, index) => {
+                    const rawAge = String(member.ageGroup || "").trim().toLowerCase();
+                    const matchedOption = ageOptions.find(opt => {
+                        const optLower = opt.toLowerCase();
+                        return optLower === rawAge ||
+                            (rawAge.includes("0") && rawAge.includes("4") && opt.includes("0 a 4")) ||
+                            (rawAge.includes("5") && rawAge.includes("7") && opt.includes("5 a 7")) ||
+                            ((rawAge.includes("8") || rawAge.includes("acima")) && opt.includes("8+"));
+                    }) || "Adulto";
+
+                    const ageSelectHtml = ageOptions.map(opt =>
+                        `<option value="${opt}" ${opt === matchedOption ? "selected" : ""}>${opt}</option>`
+                    ).join("");
+
                     const memberCard = `
                         <div class="bg-stone-50/70 p-5 rounded-2xl border border-stone-200 space-y-3">
                             <div>
                                 <label class="block text-[11px] font-semibold uppercase tracking-wider text-stone-500 mb-1">Nome Completo</label>
-                                <input type="text" value="${member.name}" disabled
+                                <input type="text" value="${escapeHtml(member.name)}" disabled
                                     class="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm bg-stone-100 text-stone-700 font-medium">
                             </div>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
-                                    <label class="block text-[11px] font-semibold uppercase tracking-wider text-stone-500 mb-1">Categoria / Idade</label>
-                                    <input type="text" value="${member.ageGroup}" disabled
-                                        class="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm bg-stone-100 text-stone-700">
+                                    <label class="block text-[11px] font-semibold uppercase tracking-wider text-stone-500 mb-1">Categoria / Idade *</label>
+                                    <select name="age_${index}" required
+                                        class="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-petroleum-600 bg-white font-medium text-stone-800">
+                                        ${ageSelectHtml}
+                                    </select>
                                 </div>
                                 <div>
                                     <label class="block text-[11px] font-semibold uppercase tracking-wider text-stone-500 mb-1">Status de Confirmação *</label>
                                     <select name="status_${index}" required
                                         class="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-petroleum-600 bg-white font-medium text-petroleum-900">
-                                        <option value="Irá comparecer (${member.ageGroup})">Irá comparecer</option>
+                                        <option value="Irá comparecer">Irá comparecer</option>
                                         <option value="Não poderá comparecer">Infelizmente não poderá</option>
                                     </select>
                                 </div>
@@ -834,9 +859,11 @@
             let statusesForSheet = [];
 
             currentFoundGroup.members.forEach((member, index) => {
+                const selectedAge = document.querySelector(`[name="age_${index}"]`).value;
                 const selectStatus = document.querySelector(`[name="status_${index}"]`).value;
-                summaryText += `• ${member.name}: *${selectStatus}*\n`;
-                statusesForSheet.push(`${member.name} (${selectStatus})`);
+
+                summaryText += `• ${member.name} *(${selectedAge})*: *${selectStatus}*\n`;
+                statusesForSheet.push(`${member.name} [${selectedAge}] (${selectStatus})`);
             });
 
             const obs = document.getElementById('rsvp-obs').value;
