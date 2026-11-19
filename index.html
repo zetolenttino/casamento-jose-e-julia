@@ -730,6 +730,7 @@
     }
 
     // Envio final do RSVP (Salva direto na planilha via Apps Script e abre o WhatsApp)
+        // Envio final do RSVP (Salva direto na planilha via Apps Script e abre o WhatsApp)
     async function handleRSVP(e) {
       e.preventDefault();
       if (!currentFoundGroup) return;
@@ -741,7 +742,10 @@
         const selectedAge = document.querySelector(`[name="age_${index}"]`).value;
         const selectStatus = document.querySelector(`[name="status_${index}"]`).value;
 
-        summaryText += `• ${member.name} *(${selectedAge})*: *${selectStatus}*\n`;
+        // Formata a faixa etária apenas para a mensagem do WhatsApp (remove parênteses duplos)
+        const displayAge = selectedAge.replace(/\s*\(([^)]+)\)/, ' de $1');
+
+        summaryText += `• ${member.name} *(${displayAge})*: *${selectStatus}*\n`;
         membersPayload.push({
           name: member.name,
           ageGroup: selectedAge,
